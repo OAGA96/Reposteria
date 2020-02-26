@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D77C0BE7-9AD5-4A5F-82CD-51F0B8A20B15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PasteleriaReposteria</RootNamespace>
+    <AssemblyName>PasteleriaReposteria</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPdf, Version=2019.7.0.21100, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>packages\IronPdf.2019.7.0\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZetPDF">
+      <HintPath>..\..\..\Desktop\ZetPdf\Binaries\ZetPDF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BancoApi.cs" />
+    <Compile Include="BaseDeDatos.cs" />
+    <Compile Include="Main\FrmAdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\FrmAdminView.Designer.cs">
+      <DependentUpon>FrmAdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Etc\FrmCerrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Etc\FrmCerrar.Designer.cs">
+      <DependentUpon>FrmCerrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banco\FrmEfectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\FrmEfectivo.Designer.cs">
+      <DependentUpon>FrmEfectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FrmEntregas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FrmEntregas.Designer.cs">
+      <DependentUpon>FrmEntregas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\FrmCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\FrmCotizacion.Designer.cs">
+      <DependentUpon>FrmCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\FrmCotizacionRegistrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\FrmCotizacionRegistrarCliente.Designer.cs">
+      <DependentUpon>FrmCotizacionRegistrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FrmDisponibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FrmDisponibilidad.Designer.cs">
+      <DependentUpon>FrmDisponibilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FrmGetVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FrmGetVentas.Designer.cs">
+      <DependentUpon>FrmGetVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos y Paquetes\FrmPaquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos y Paquetes\FrmPaquetes.Designer.cs">
+      <DependentUpon>FrmPaquetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos y Paquetes\FrmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos y Paquetes\FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmRegistrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmRegistrarCliente.Designer.cs">
+      <DependentUpon>FrmRegistrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banco\FrmTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\FrmTarjeta.Designer.cs">
+      <DependentUpon>FrmTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FrmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FrmVentas.Designer.cs">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FrmVentaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FrmVentaView.Designer.cs">
+      <DependentUpon>FrmVentaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Admin\FrmRegistrarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmRegistrarUsuarios.Designer.cs">
+      <DependentUpon>FrmRegistrarUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main\FrmAdminView.resx">
+      <DependentUpon>FrmAdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etc\FrmCerrar.resx">
+      <DependentUpon>FrmCerrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco\FrmEfectivo.resx">
+      <DependentUpon>FrmEfectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FrmEntregas.resx">
+      <DependentUpon>FrmEntregas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion\FrmCotizacion.resx">
+      <DependentUpon>FrmCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion\FrmCotizacionRegistrarCliente.resx">
+      <DependentUpon>FrmCotizacionRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FrmDisponibilidad.resx">
+      <DependentUpon>FrmDisponibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FrmGetVentas.resx">
+      <DependentUpon>FrmGetVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos y Paquetes\FrmPaquetes.resx">
+      <DependentUpon>FrmPaquetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos y Paquetes\FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FrmRegistrarCliente.resx">
+      <DependentUpon>FrmRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco\FrmTarjeta.resx">
+      <DependentUpon>FrmTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FrmVentas.resx">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FrmVentaView.resx">
+      <DependentUpon>FrmVentaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\FrmRegistrarUsuarios.resx">
+      <DependentUpon>FrmRegistrarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
